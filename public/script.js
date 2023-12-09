@@ -42,7 +42,7 @@ const showStocks = async () =>
 const getJSON = async () => {
     try
     {
-        let response = await fetch("http://localhost:3000/api/stocks");
+        let response = await fetch(".../api/stocks");
         return await response.json();
     }catch(error){
         console.log("error retrieving json");
