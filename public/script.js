@@ -20,7 +20,7 @@ const showStocks = async () =>
         
         let img = document.createElement("img");
         section.append(img);
-        img.src="http://localhost:3000/" +stocks.img;
+        img.src="https://assignment13-5i2l.onrender.com/" +stocks.img;
 
         let p = document.createElement("p");
         section.append(p);
