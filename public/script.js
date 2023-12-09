@@ -31,9 +31,9 @@ const showStocks = async () =>
         let p2 = document.createElement("p");
         section.append(p2);
         p2.innerHTML = stocks.fiftytwoweeklow;
-        let p3 = document.createElement("p");
-        section.append(p3);
-        p3.innerHTML = stocks.marketcap;
+        let li = document.createElement("li");
+        section.append(li);
+        li.innerHTML = stocks.marketcap;
     });
 
 

@@ -17,7 +17,7 @@ app.get("/api/stocks", (req, res) => {
         "Details",
         "Market Cap: 600B",
         "Employee Count: 2346", 
-        "Price to Earnings Ratio: 88"
+        "Price to Earnings Ratio: 88",
     ],
     img: "images/AMD.png",
   };
@@ -30,7 +30,7 @@ app.get("/api/stocks", (req, res) => {
         "Details",
         "Market Cap: 600B",
         "Employee Count: 2346", 
-        "Price to Earnings Ratio: 88"
+        "Price to Earnings Ratio: 88",
     ],
     img: "images/NVDA.png",
   };
@@ -43,7 +43,7 @@ app.get("/api/stocks", (req, res) => {
         "Details",
         "Market Cap: 600B",
         "Employee Count: 2346", 
-        "Price to Earnings Ratio: 88"
+        "Price to Earnings Ratio: 88",
     ],
     img: "images/BAC.png",
   };
@@ -56,7 +56,7 @@ app.get("/api/stocks", (req, res) => {
         "Details",
         "Market Cap: 600B",
         "Employee Count: 2346", 
-        "Price to Earnings Ratio: 88"
+        "Price to Earnings Ratio: 88",
     ],
     img: "images/XOM.png",
   };
@@ -69,7 +69,7 @@ app.get("/api/stocks", (req, res) => {
         "Details",
         "Market Cap: 600B",
         "Employee Count: 2346", 
-        "Price to Earnings Ratio: 88"
+        "Price to Earnings Ratio: 88",
     ],
     img: "images/SPY.png",
   };
