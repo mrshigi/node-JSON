@@ -1,13 +1,10 @@
 const express = require("express");
 const app = express();
-const Joi = require("joi");
-const multer = require("multer");
 app.use(express.static("public"));
-app.use(express.json());
-const cors = require("cors");
-app.use(cors());
 
-const upload = multer({ dest: __dirname + "/public/images" });
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+});
 
 app.get("/api/stocks", (req, res) => {
   const stocks = [];
@@ -78,29 +75,7 @@ app.get("/api/stocks", (req, res) => {
   };
   res.json(stocks);
 });
-app.get("/api/stocks", (req, res) => {
-  res.send(stocks);
-});
-app.post("/api/stocks", upload.single("img"), (req, res) => {
-  const stocksData = {
-    name: req.body.name,
-    price: req.body.price,
-    fiftytwoweekhigh: req.body.fiftytwoweekhigh,
-    fiftytwoweeklow:req.body.fiftytwoweeklow,
-    marketcap: req.body.marketcap.split(","),
-    img: req.file ? req.file.filename : ""
-  };
 
-  const { error } = validateBook(stocksData);
-
-  if (error) {
-    res.status(400).send(error.details[0].message);
-    return;
-  }
-
-  stocks.push(stock);
-  res.send(stocks);
-});
 app.listen(3000, () => {
   console.log("I listen");
 });
