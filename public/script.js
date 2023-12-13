@@ -31,9 +31,17 @@ const showStocks = async () =>
         let p2 = document.createElement("p");
         section.append(p2);
         p2.innerHTML = stocks.fiftytwoweeklow;
-        let li = document.createElement("li");
-        section.append(li);
-        li.innerHTML = stocks.marketcap;
+        //let li = document.createElement("li");
+       // section.append(li);
+        //li.innerHTML = stocks.marketcap;
+        const ul = document.createElement("ul");
+        bookDetails.append(ul);
+        console.log(stocks.marketcap);
+        stocks.marketcap.forEach((marketcap) => {
+          const li = document.createElement("li");
+          ul.append(li);
+          li.innerHTML = marketcap;
+        });
     });
 
 

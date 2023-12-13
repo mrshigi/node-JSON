@@ -75,7 +75,29 @@ app.get("/api/stocks", (req, res) => {
   };
   res.json(stocks);
 });
+app.get("/api/stocks", (req, res) => {
+  res.send(stocks);
+});
+app.post("/api/stocks", upload.single("img"), (req, res) => {
+  const stocksData = {
+    name: req.body.name,
+    price: req.body.price,
+    fiftytwoweekhigh: req.body.fiftytwoweekhigh,
+    fiftytwoweeklow:req.body.fiftytwoweeklow,
+    marketcap: req.body.marketcap.split(","),
+    img: req.file ? req.file.filename : ""
+  };
 
+  const { error } = validateBook(stocksData);
+
+  if (error) {
+    res.status(400).send(error.details[0].message);
+    return;
+  }
+
+  stocks.push(stock);
+  res.send(stocks);
+});
 app.listen(3000, () => {
   console.log("I listen");
 });
